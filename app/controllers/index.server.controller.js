@@ -17,11 +17,7 @@ exports.trainAndPredict = function (req, res) {
   var input_epochs = parseInt(req.body.epochs);
   var input_learning_rate = parseFloat(req.body.learning_rate);
 
-  //console.log(irisTesting);
-  //
-  // convert/setup our data for tensorflow.js
-  //
-  //tensor of features for training data
+    //tensor of features for training data
   // include only features, not the output
   const trainingData = tf.tensor2d(
     iris.map((item) => [
@@ -31,18 +27,7 @@ exports.trainAndPredict = function (req, res) {
       item.petal_width,
     ])
   );
-  //console.log(trainingData.dataSync())
-  //Float32Array(4) [
-  //   5.400000095367432,
-  //   3.9000000953674316,
-  //   1.7000000476837158,
-  //   0.4000000059604645
-  // ]
-  //tensor of output for training data
-  //the values for species will be:
-  // setosa:       1,0,0
-  // virginica:    0,1,0
-  // versicolor:   0,0,1
+
   const outputData = tf.tensor2d(
     iris.map((item) => [
       item.species === "setosa" ? 1 : 0,
@@ -50,17 +35,6 @@ exports.trainAndPredict = function (req, res) {
       item.species === "versicolor" ? 1 : 0,
     ])
   );
-  //console.log(outputData.dataSync())
-  //
-  //tensor of features for testing data
-  // const testingData = tf.tensor2d(
-  //   irisTesting.map((item) => [
-  //     item.sepal_length,
-  //     item.sepal_width,
-  //     item.petal_length,
-  //     item.petal_width,
-  //   ])
-  // );
 
   // test with user input
   const testingData = tf.tensor2d([
@@ -143,19 +117,7 @@ exports.trainAndPredict = function (req, res) {
       };
       console.log(resultForData1);
       res.status(200).send(dataToSent);
-      //
-      /*
-            res.render('results',
-                {
-                    elapsedTime: elapsedTime / 1000,
-                    lossValue: lossValue,
-                    resultForData1: resultForData1[0],
-                    resultForData2: resultForData2,
-                    resultForData3: resultForData3
-                }
-            )
-            */
-      //
+      
     });
     //
   } //end of run function
