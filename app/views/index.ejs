@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    
+    <form method="POST" action='/run'>
+      <h1>Enter Test Data</h1>
+      <table>          
+          <tr>
+              <td>sepal_length:</td>
+              <td></td>
+              <td> <input type="number" size="30" placeholder="Enter sepal_length" name="sepal_length" step="0.01"><br />
+              </td>
+          </tr>
+          <tr>
+            <td>sepal_width:</td>
+            <td></td>
+            <td> <input type="number" step="0.01" size="30" placeholder="Enter sepal_width" name="sepal_width" ><br />
+            </td>
+          </tr>
+          <tr>
+            <td>petal_length:</td>
+            <td></td>
+            <td> <input type="number" step="0.01" size="30" placeholder="Enter petal_length" name="petal_length"><br />
+            </td>
+          </tr>
+          <tr>
+            <td>petal_width:</td>
+            <td></td>
+            <td> <input type="number" step="0.01" size="30" placeholder="Enter petal_width" name="petal_width"><br />
+            </td>
+          </tr>
+          <tr>
+            <td>epochs:</td>
+            <td></td>
+            <td> <input type="number" step="0.01" size="30" placeholder="Enter epochs" name="epochs"><br />
+            </td>
+          </tr>
+          <tr>
+            <td>learning rate:</td>
+            <td></td>
+            <td> <input type="number" step="0.01" size="30" placeholder="Enter learning rate" name="learning_rate"><br />
+            </td>
+          </tr>
+      </table>
+      
+      <button type="submit" value="Submit" name="submit">Run</button>
+
+  </form>
+  </body>
+</html>
